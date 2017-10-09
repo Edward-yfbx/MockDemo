@@ -14,4 +14,4 @@ Android 6.0 以前可以通过以下方法获得虚拟定位的开关状态
 ```
 android.permission.ACCESS_MOCK_LOCATION 
 ```
-如果使用了该权限，且该APP正在运行，则认为虚拟定位为开启状态
+如果使用了该权限，且该APP正在运行，则认为虚拟定位处于开启状态
