@@ -1,6 +1,6 @@
 # MockDemo
 
-Android 6.0 以前可以通过Settings中的信息获得虚拟定位的开关状态
+Android 6.0 以前可以通过以下方法获得虚拟定位的开关状态
 
 ```
     public static boolean isMockSettingsON(Context context) {
@@ -9,8 +9,7 @@ Android 6.0 以前可以通过Settings中的信息获得虚拟定位的开关状
     }
 ```   
 
-而6.0以后无法通过以上方法来获取虚拟定位开关状态，所以需要从其他思路来解决这个问题。
-
+而6.0以后不可用，所以需要从其他思路来解决这个问题。
 此Demo中的思路是查询所有已安装的APP,检测是否使用了权限：
 ```
 android.permission.ACCESS_MOCK_LOCATION 
