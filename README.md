@@ -1,10 +1,18 @@
 # MockDemo
 
-通过虚拟定位可以伪造地理信息，在某些APP中可以实现一定程度上的作弊，比如上下班打卡签到系统等，所以在开发中需要避免这种状况。
-
+```
 Android 6.0 以前可以通过Settings中的信息获得虚拟定位的开关状态
-       
+```
+    public static boolean isMockSettingsON(Context context) {
+        return !Settings.Secure.getString(context.getContentResolver(),
+                Settings.Secure.ALLOW_MOCK_LOCATION).equals("0");
+    }
+    
+```   
 而6.0以后无法通过以上方法来获取虚拟定位开关状态，所以需要从其他思路来解决这个问题。
 
-此Demo中的思路是查询所有已安装的APP,当检测到APP中使用了 android.permission.ACCESS_MOCK_LOCATION 权限，且该APP正在运行，
-则认为使用了虚拟定位，根据情况做出处理
+此Demo中的思路是查询所有已安装的APP,检测是否使用了权限：
+```
+android.permission.ACCESS_MOCK_LOCATION 
+```
+如果使用了该权限，且该APP正在运行，则认为虚拟定位为开启状态
